@@ -1,4 +1,6 @@
 var express = require('express');
+var exec = require('child_process').exec;
+var log = require('util').log;
 var router = express.Router();
 
 /* GET home page. */
@@ -16,7 +18,12 @@ router.post('/', function (req, res/*, next*/) {
     }
 
     if (req.body.code === '3146') {
-        // TODO: Logging
+        log('OPEN: ' + req.body.phone + ' ' + req.body.code);
+
+        exec('/usr/local/bin/unlock', function (/*error, stdout, stderr*/) {
+            // TODO: Error logging
+        });
+
         res.redirect('/confirmation');
         return;
     }
