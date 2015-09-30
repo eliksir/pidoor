@@ -4,14 +4,15 @@
   <form method="post">
     <div class="form-group{{#if errors.phone}} has-error{{/if}}">
       <label for="phone">Ditt telefonnr.:</label>
-      <input id="phone" name="phone" class="form-control" type="phone" value="{{data.phone}}">
+      <input id="phone" name="phone" class="form-control" type="phone"
+        value="{{data.phone}}" maxlength="8" required>
       {{#if errors.phone}}
         <span class="help-block">{{errors.phone}}</span>
       {{/if}}
     </div>
     <div class="form-group{{#if errors.code}} has-error{{/if}}">
       <label for="code">Kode:</label>
-      <input id="code" name="code" class="form-control" type="text" >
+      <input id="code" name="code" class="form-control" type="text" required>
       {{#if errors.code}}
         <span class="help-block">{{errors.code}}</span>
       {{/if}}

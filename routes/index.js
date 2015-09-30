@@ -17,7 +17,7 @@ router.post('/', function (req, res/*, next*/) {
         errors.code = 'Må fylles ut';
     }
 
-    if (req.body.code === '3146') {
+    if (req.body.code === process.env.DOOR_CODE) {
         log('OPEN: ' + req.body.phone + ' ' + req.body.code);
 
         exec('/usr/local/bin/unlock', function (/*error, stdout, stderr*/) {
