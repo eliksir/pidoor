@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+if (!process.env.DOOR_CODE) {
+    console.error('ERROR: Missing DOOR_CODE environment variable');
+    process.exit(1);
+}
+
 /**
  * Module dependencies.
  */
