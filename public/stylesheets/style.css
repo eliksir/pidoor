@@ -1,2 +1,19 @@
+html,
+body,
+.container {
+  height: 100%; }
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.alert {
+  text-align: center;
+  font-size: 2rem; }
+  .alert #seconds {
+    display: block;
+    font-size: 8rem;
+    font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

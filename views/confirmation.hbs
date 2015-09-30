@@ -1,0 +1,19 @@
+<div class="confirmation container">
+  <div class="alert alert-success" role="alert">
+    Døren er nå åpen i <span id="seconds">10</span> sekunder
+  </div>
+</div>
+<script>
+(function () {
+  var seconds = document.getElementById('seconds');
+  var countdown = window.setInterval(function () {
+    var current = parseInt(seconds.innerText, 10);
+    if (current === 1) {
+      window.clearInterval(countdown);
+      window.location = '/';
+    }
+
+    seconds.innerText = '' + (current - 1);
+  }, 1000);
+})();
+</script>
